@@ -13,6 +13,12 @@ h3 {
   font-family: Cochin, Georgia, serif;
 }
 
+@media screen and (max-width: 1000px) {
+  #toc {
+    display: none;
+  }
+}
+
 #toc {
   /* display: grid; */
   align-self: start;
@@ -39,6 +45,10 @@ h3 {
   grid-template-rows: inherit;
   grid-column-gap: inherit;
   grid-row-gap: inherit;
+}
+
+.no-doi {
+  display: none;
 }
 
 /* D3 Style */
