@@ -1,0 +1,68 @@
+h1 {
+  font-weight: normal !important;
+  font-family: Cochin, Georgia, serif;
+}
+
+h2 {
+  font-weight: normal !important;
+  font-family: Cochin, Georgia, serif;
+}
+
+h3 {
+  /* font-weight: normal !important; */
+  font-family: Cochin, Georgia, serif;
+}
+
+#toc {
+  /* display: grid; */
+  align-self: start;
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-right-style: solid;
+  border-right-width: 0.8px;
+  color: rgba(0, 0, 0, 0.8);
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end:6;
+  justify-self: end;
+  padding-right: 3em;
+  padding-left: 2em;
+  line-height: 0.3em;
+  text-transform: capitalize;
+}
+
+
+.subgrid {
+  grid-column: screen;
+  display: grid;
+  grid-template-columns: inherit;
+  grid-template-rows: inherit;
+  grid-column-gap: inherit;
+  grid-row-gap: inherit;
+}
+
+/* D3 Style */
+
+/* Style the lines by removing the fill and applying a stroke */
+.line {
+    fill: none;
+    stroke: #ffab00;
+    stroke-width: 3;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+/* Style the dots by assigning a fill and stroke */
+.dot {
+    fill: #ffab00;
+    stroke: #fff;
+}
+
+circle.focus {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2%
+}

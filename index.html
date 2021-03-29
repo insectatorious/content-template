@@ -1,0 +1,339 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://distill.pub/template.v2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+
+<link rel="stylesheet" href="style.css">
+
+<d-front-matter>
+  <script type="text/json">{
+    "title": "Headline",
+    "description": "Description",
+    "published": "March 26, 2021",
+    "authors": [
+      {
+        "author": "Sumanas Sarma",
+        "authorURL": "https://",
+        "affiliation": "",
+        "affiliationURL": "https://"
+      },
+      {
+        "author": "Serge Plata",
+        "authorURL": "https://",
+        "affiliation": "Infosys Consulting",
+        "affiliationURL": "https://www.infosys.com/services/consulting.html"
+      }
+    ],
+    "katex": {
+      "delimiters" : [
+        {"left": "$", "right": "$", "display": false},
+        {"left": "$$", "right": "$$", "display": true}
+      ]
+    }
+  }</script>
+</d-front-matter>
+
+<d-title>
+  <h1>A Thought-Provoking Title</h1>
+  <p>An optional but useful blurb to display an abstract in a couple of sentences.
+  Maybe include a nice image? It could span the width of this page.</p>
+  <figure class="l-page-outset">
+    <img id="hero-img" src="images/bg.jpg"  alt="Photo by Ryunosuke Kikuno on Unsplash">
+    <figcaption>Photo by <a href="https://unsplash.com/@kknrynsk_jp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ryunosuke Kikuno</a> on <a href="https://unsplash.com/explore?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+  </figure>
+
+</d-title>
+
+<d-byline></d-byline>
+
+
+<d-article>
+  <d-toc id="toc"></d-toc>
+  <!-- Modify  grid-row-end: 6; for #toc in styles.css if h2 below looks strange -->
+
+  <h2 style="grid-column-start: 4">Getting Started</h2>
+  <p>Download and modify this file.</p>
+
+  <h2>Section Heading</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+    in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+    deserunt mollit anim id est laborum.</p>
+
+  <p class="l-gutter">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt.</p>
+
+  <h3>Sub-Section Heading</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+    in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+    deserunt mollit anim id est laborum.</p>
+
+  <h2>Equations</h2>
+
+  <p>As a block:
+    <d-math block>
+        c = \pm\underbrace{\sqrt{a^2 + b^2}}_{\textrm{hypotenuse}}
+    </d-math>
+  </p>
+
+  <p>or inline $ c = \pm\sqrt{a^2 + b^2} $. This uses simple KaTeX for fast rendering.</p>
+
+  <d-code language="html">
+    &lt;d-math block&gt;
+        c = \pm\underbrace{\sqrt{a^2 + b^2}}_{\textrm{hypotenuse}}
+    &lt;/d-math&gt;
+  </d-code>
+
+  <h2 id="citations">Citations</h2>
+  <p>
+    After adding a Bibtex bibliography entry, citations <d-cite key="conlen2019launching"></d-cite>
+     can be inlined. At the end of the article a bibliography will be added.
+   </p>
+
+   <p>
+     Use
+     <d-code language="html">&lt;d-cite key="conlen2019launching"&gt;&lt/d-cite&gt;</d-code>
+     to make a citation and add the citation to the bibiliography as:
+     <d-code block language="html">
+       &lt;d-bibliography&gt;&lt;script type="text/json"&gt;
+         [
+           ["conlen2019launching",  // <-- this is used in the 'key' field
+             {"title":"Launching the Parametric Press",
+              "author":"Conlen, Matthew and Hohman, Fred",
+              "journal":"Visualization for Communication (VisComm) at IEEE VIS",
+              "year":"2019",
+              "url":"https://parametric.press",
+              "type":"article"}],
+            ["another2020ref",
+              {"title":"Another Title",
+               "author":"Author, Another",
+               "journal":"Another Title for Another Paper",
+               "year":"2020",
+               "url":"https://distill.pub",
+               "type":"article"}]
+         ]
+       &lt;/script&gt;&lt;/d-bibliography&gt;
+     </d-code>
+   </p>
+   <p>As per the <a href="https://distill.pub/guide/">Distill Guide</a>,
+   try to add the URL where possible to allow for linking. </p>
+
+  <h2 id="footnotes">Footnotes</h2>
+
+  <p>
+    Footnotes can be added like this<d-footnote>This is a footnote!</d-footnote>.
+    <d-code language="html">&lt;d-footnote&gt;This is a footnote!&lt;/d-footnote&gt;</d-code>
+  </p>
+  <p>These will also be added to the end of the article with the bibliography.</p>
+
+
+
+  <h2 id="graphs">Graphs</h2>
+
+  <h3 id="mermaidjs-graphs">MermaidJS Graphs</h3>
+  <div class="mermaid">
+    %%{init: {'theme':'neutral'}}%%
+    graph LR
+      A[Christmas] -->|Get money| B(Go shopping)
+      B --> C{Let me think}
+      C -->|One| D[Laptop]
+      C -->|Two| E[iPhone]
+      C -->|Three| F[Car]
+      subgraph Devices
+        D
+        E
+        F
+      end
+  </div>
+  <p>which is generated using: </p>
+  <d-code block language="markdown">
+    &lt;div class="mermaid"&gt;
+       %%{init: {'theme':'neutral'}}%%
+       graph LR
+          A[Christmas] -->|Get money| B(Go shopping)
+          B --> C{Let me think}
+          C -->|One| D[Laptop]
+          C -->|Two| E[iPhone]
+          C -->|Three| F[Car]
+          subgraph Devices
+            D
+            E
+            F
+          end
+    &lt;/div&gt;
+  </d-code>
+  <p>See <a href="https://mermaid-js.github.io/mermaid/#/n00b-syntaxReference" target="_blank">
+  MermaidJS diagram syntax</a> for more examples and diagram types.</p>
+
+  <div class="mermaid">
+    %%{init: {'theme':'neutral'}}%%
+    stateDiagram-v2
+      [*] --> Still
+      Still --> [*]
+      Still --> Moving
+      Moving --> Still
+      Moving --> Crash
+      Crash --> [*]
+
+  </div>
+
+  <p>
+    Change layout from <code>graph LR</code> to <code>graph TD</code>
+    for a vertical graph.
+  </p>
+
+  <h3 id="d3-graphs">D3 Graphs</h3>
+  <p>For the following chart, the Javascript code is loaded from a separate file:
+  <code><a href="script.js" target="_blank">script.js</a></code>.</p>
+  <div id="line-chart"></div>
+
+  <h3 id="plotly-graphs">Plotly Graphs</h3>
+
+  <p>Plotly charts can also be used</p>
+  <iframe frameBorder="0" src="charts/line-chart-2.html" height="300px"></iframe>
+
+  <p>To export, build the Plotly <code>figure</code> and then save.
+    Whilst other <a href="https://plotly.com/python/templates/">Plotly themes/templates</a>
+    can be used, it would be a good idea to use one that goes well with the
+    theme of the rest of the article. <code>simple_white</code> is recommended.</p>
+
+  <d-code block language="python">
+    # Normal plotly trace will also work
+    import numpy as np
+    import pandas as pd
+    import plotly.express as px
+
+    x = np.arange(100)
+    y = np.sin(x) + np.random.rand(100)
+
+    fig = px.line(df, x="x", y="y", template="simple_white")
+    fig.write_html("line-chart-2.html", include_plotlyjs="cdn")
+  </d-code>
+
+  <p>The exported <code>HTML</code> can be embedded in the page
+     using an <code>iframe</code>:</p>
+
+  <d-code language="html">
+    &lt;iframe frameBorder="0"
+            class="l-page"
+            src="charts/line-chart-2.html"
+            height="300px"&gt;&lt;/iframe&gt;
+  </d-code>
+
+  <iframe frameBorder="0"
+          class="l-page"
+          src="charts/line-chart-2.html"
+          height="300px"></iframe>
+
+  <p>
+    If required, the graph can spill out to use more horizontal space by
+    adding <d-code language="css">class="l-page"</d-code> to the tag.
+  </p>
+
+  <p>
+    The use of <d-code language="python">include_plotlyjs="cdn"</d-code>
+    when calling <d-code language="python">fig.write_html</d-code> will
+    <em>not</em> include the PlotlyJS library in the exported file (the default
+    behaviour is to include it with each export).
+    This will reduce the size of each export by ~3MB as the library is
+    included by adding a call to the CDN.
+    If this is not sufficient,
+    <a href="https://plotly.github.io/plotly.py-docs/generated/plotly.io.write_html.html"
+       target="_blank">
+      the documentation
+    </a> has other options for exporting that may be suitable.
+  </p>
+
+  <h2 id="images">Images</h2>
+  <p>Images can be added directly to the <em>main section</em>:</p>
+
+  <d-code block language="html">
+    &lt;figure&gt;
+      &lt;img width="100%"
+           src="images/moon.jpg"&gt;&lt;/img&gt;
+      &lt;figcaption&gt;
+      Photo by <a href="https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">CHUTTERSNAP</a> on <a href="https://unsplash.com/collections/2250455/futurama?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>.
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+  </d-code>
+
+  <p>or to the <em>side</em>:</p>
+  <d-code block language="html">
+    &lt;figure class="l-gutter"&gt;
+      &lt;img width="100%"
+           src="images/bender.jpg"&gt;&lt;/img&gt;
+      &lt;figcaption&gt;
+      Photo by <a href="https://unsplash.com/@tomma5588?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Francesco Tommasini</a> on <a href="https://unsplash.com/s/photos/futurama?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>.
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+  </d-code>
+
+  <figure>
+    <img width="100%"
+         src="images/moon.jpg"></img>
+    <figcaption>Photo by <a href="https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">CHUTTERSNAP</a> on <a href="https://unsplash.com/collections/2250455/futurama?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  .</figcaption>
+  </figure>
+
+  <figure class="l-gutter">
+    <img  width="100%"
+         src="images/bender.jpg"></img>
+    <figcaptionPhoto by <a href="https://unsplash.com/@tomma5588?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Francesco Tommasini</a> on <a href="https://unsplash.com/s/photos/futurama?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>.</figcaption>
+  </figure>
+
+
+  <h2 id="code-blocks">Code Blocks</h2>
+  <p>Code blocks use <a href="https://prismjs.com/">PrismJS</a> under the hood.
+  They can be inline, for example, to import numpy in Python: <d-code language="python">import numpy as np</d-code></p>
+  <p>Or in a separate block.</p>
+  <d-code block language="python">
+    import numpy as np
+    import pandas as pd
+
+    df: pd.DataFrame = pd.read_csv("/path/to/csv")
+  </d-code>
+
+  <p>which is generated using:</p>
+  <d-code block language="html">
+    &lt;d-code block language="python"&gt;
+      import numpy as np
+      import pandas as pd
+
+      df: pd.DataFrame = pd.read_csv("/path/to/csv")
+    &lt;/d-code&gt;
+  </d-code>
+
+  <d-appendix>
+    <h3>Acknowledgments</h3>
+      <p>
+        The main source of this template comes from the wonderful
+        <a href="https://distill.pub" target="_blank">distill.pub</a>.
+        Apart from some tweaks and modifications here and there, the heavy
+        lifting is being done by them :)
+      </p>
+    <h3>Author Contributions</h3>
+      <p>Author 1 did X, Author 2 did Y. </p>
+  </d-appendix>
+</d-article>
+
+<d-bibliography><script type="text/json">[
+  ["conlen2019launching",
+    {"title":"Launching the Parametric Press",
+     "author":"Conlen, Matthew and Hohman, Fred",
+     "journal":"Visualization for Communication (VisComm) at IEEE VIS",
+     "year":"2019",
+     "url":"https://parametric.press",
+     "type":"article"}]
+]</script></d-bibliography>
+
+<script src="script.js"></script>
