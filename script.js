@@ -73,3 +73,9 @@ svg.selectAll(".dot")
 
 
 // var tocHeading = docus= tocHeading.innerText.replace("contents", "Contents")
+document.addEventListener("DOMContentLoaded", function(event) {
+  //do work
+  var x = document.getElementsByClassName("byline")[0]
+  x.childNodes[x.childNodes.length - 2].classList.add("no-doi")
+
+});
