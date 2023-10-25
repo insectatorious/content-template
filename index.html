@@ -55,6 +55,13 @@
   <!-- Modify  grid-row-end: 6; for #toc in styles.css if h2 below looks strange -->
 
   <h2 style="grid-column-start: 4">Getting Started</h2>
+
+  <p>
+    <a href="https://github.com/insectatorious/content-template">Use the template repository</a> to 'Create a new repository'.
+    Use your favourite web server to serve the files in the repository.
+    Make changes to <code>index.html</code> to create your article.
+  </p>
+
   <p>This is a template for presenting technical content through an interactive
     medium.
     A large amount of the work used here has been taken from the
@@ -148,8 +155,7 @@
   <h2 id="graphs">Graphs</h2>
 
   <h3 id="mermaidjs-graphs">MermaidJS Graphs</h3>
-  <div class="mermaid">
-    %%{init: {'theme':'neutral'}}%%
+  <pre class="mermaid">
     graph LR
       A[Christmas] -->|Get money| B(Go shopping)
       B --> C{Let me think}
@@ -161,11 +167,10 @@
         E
         F
       end
-  </div>
+  </pre>
   <p>which is generated using: </p>
   <d-code block language="markdown">
-    &lt;div class="mermaid"&gt;
-       %%{init: {'theme':'neutral'}}%%
+    &lt;pre class="mermaid"&gt;
        graph LR
           A[Christmas] -->|Get money| B(Go shopping)
           B --> C{Let me think}
@@ -177,11 +182,11 @@
             E
             F
           end
-    &lt;/div&gt;
+    &lt;/pre&gt;
   </d-code>
   <p>or a <a href="https://en.wikipedia.org/wiki/State_diagram">State Chart</a></p>
-  <div class="mermaid">
-    %%{init: {'theme':'neutral'}}%%
+  <pre class="mermaid">
+    %%{init: {'theme':'forest'}}%%
     stateDiagram-v2
       [*] --> Still
       Still --> [*]
@@ -189,8 +194,7 @@
       Moving --> Still
       Moving --> Crash
       Crash --> [*]
-
-  </div>
+  </pre>
 
   <p>
     Change layout from <code>graph LR</code> to <code>graph TD</code>
